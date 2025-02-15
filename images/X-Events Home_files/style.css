@@ -1,0 +1,275 @@
+/* .pattaya-regular {
+    font-family: "Pattaya", serif;
+    font-weight: 400;
+    font-style: normal;
+  } 
+.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.poppins-black-italic {
+  font-family: "Poppins", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+*/
+
+/* Global Styles */
+:root {
+    --button: rgb(24, 119, 201);
+    --buttonhover: rgb(15, 8, 233);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    font-size: 4.5rem;
+    color: white;
+    font-weight: bold;
+}
+li, button, label, input {
+    font-size: 2rem;
+}
+.hero p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(254, 254, 255);
+    font-family: "poppins", sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5rem 10rem;
+}
+h2 {
+    font-size: 4.8rem;
+}
+h3 {
+    font-size: 3rem;
+    font-weight: normal;
+} 
+h4, h5 {
+    font-size: 2.8rem;
+}
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    padding: 2rem 4rem;
+    margin-bottom: 2rem;
+    background: var(--button);
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+button:hover {
+    background: var(--buttonhover);
+    font-size: 3.0rem;
+}
+
+/* Nav Section with Hero */
+.main_head {
+    background: black;
+    color: white;
+}
+nav {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    flex-wrap: wrap; /* this makes it so nav items at right go below Travelly logo once screen shrinks to a certain point */
+}
+nav ul {
+    display: flex; /* flexbox */
+    flex: 1 1 80rem; /* 1 - flex grow and can grow proportional to other items, 1 - flex shrink and does same thing but opposite.
+    the 40 is the initial size of the item before any shrinking or growing. you can increase number to make the flex-wrap work sooner as screen shrinks 
+    the 8rem also makes it so the flex-wrap works when screen is at 960px */
+    justify-content: space-around; /* spaces items out horizontally and evenly */
+    align-items: center; /* centers items vertically */
+    list-style: none; /* removes the circles to right of each item: */
+}
+#logo {
+    flex: 2 1 40rem;
+    font-family: "pattaya", sans-serif;
+    font-weight: 400;
+    font-size: 3.0rem;
+}
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("/images/home_background.jpg");
+    min-height: 90vh;
+    background-repeat: no-repeat; /* after we do this though, the image is too big */
+    background-size: cover; /* this fixes that and now the image will not be too big on th
+    e page */
+    background-position: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* this centers the content vertically */
+    align-items: center; /* this centers content horizontally */
+    text-align: center; /* before this, text is aligned to left in its box, this makes it align center */
+}
+.hero p {
+    padding: 5rem; /* this creates vertical space between the h1, the p and the button */
+} 
+/* hamburger menu icon */
+.menu-icon {
+    display: none; /* this will make it not display at larger sizes */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+#menu-toggle {
+    display: none; /* this hides the menu icon checkbox */
+}
+
+/* Home Page */
+/* grid section */
+.grid-container {
+    background: url("/images/background_1.jpg");
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 1rem;
+    justify-content: space-around;
+    justify-items: center;
+}
+.grid-item h2{
+    text-align: center;
+}
+
+.grid-item-1 {
+    grid-column: 1/3;
+
+}
+.grid-item-2 {
+    grid-column: 2/4;
+
+}
+.grid-item-3 {
+    grid-column: 1/3;
+}
+.grid-item-4 {
+    grid-column: 2/4;
+}
+.hero, .grid-container {
+    overflow-x: hidden;
+}
+
+/* Events Page */
+
+/* Events Page Slider */
+.slider-container {
+    padding: 2rem;
+    background: green;
+    min-height: 90vh;
+}
+.slider-wrapper {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+.slider {
+    display: flex;
+    aspect-ratio: 16/9; /*common aspect ratio for photos to ensure good width to height */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* makes it snap to an image instead of stay slid only part of the way */
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25); /* box-shadow: (x-offset y-offset blur spread color) hsla = hugh saturation lightness alpha(or opacity value) */  
+    border-radius: 0.5rem;
+    overflow: hidden; /* hides the ugly slider bar */
+}
+.slider img {
+    flex: 1 0 100%; /* flex: flex-grow flex-shrink flex-basis */
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem; /* places slider nav 1.25 rem above bottom of slider */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /*puts nav in front of image */
+    
+}
+.slider-nav a {
+    width: 1rem;
+    height: 1rem; /* this width and height will create box shapes for these slider nav items */
+    border-radius: 50%; /* this makes them circles now */
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms; /* targets the opacity property */
+    cursor: pointer;
+}
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1160px) {
+    html {
+        font-size: 45%;
+    }
+    nav {
+        text-align: center;
+    }
+    #logo {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-icon {
+        display: block;
+    }
+    #menu-toggle:checked + label + ul {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

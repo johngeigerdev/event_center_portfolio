@@ -4,9 +4,9 @@
     font-style: normal;
   } 
 .poppins-regular {
-  font-family: "Poppins", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .poppins-medium {
   font-family: "Poppins", serif;
@@ -50,6 +50,8 @@ li, button, label, input {
     font-weight: bold;
     color: rgb(254, 254, 255);
     font-family: "poppins", sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5rem 10rem;
 }
 h2 {
     font-size: 4.8rem;
@@ -76,9 +78,11 @@ button {
     font-weight: bold;
     cursor: pointer;
     border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
 }
 button:hover {
-    background: var(--buttonhover)
+    background: var(--buttonhover);
+    font-size: 3.0rem;
 }
 
 /* Nav Section with Hero */
@@ -128,7 +132,18 @@ nav ul {
 .hero p {
     padding: 5rem; /* this creates vertical space between the h1, the p and the button */
 } 
+/* hamburger menu icon */
+.menu-icon {
+    display: none; /* this will make it not display at larger sizes */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+#menu-toggle {
+    display: none; /* this hides the menu icon checkbox */
+}
 
+/* Home Page */
 /* grid section */
 .grid-container {
     background: url("/images/background_1.jpg");
@@ -157,20 +172,64 @@ nav ul {
 .grid-item-4 {
     grid-column: 2/4;
 }
+.hero, .grid-container {
+    overflow-x: hidden;
+}
 
-/* hamburger menu icon */
-.menu-icon {
-    display: none; /* this will make it not display at larger sizes */
-    font-size: 30px;
-    color: white;
+/* Events Page */
+
+/* Events Page Slider */
+.slider-container {
+    padding: 2rem;
+    background: green;
+    min-height: 90vh;
+}
+.slider-wrapper {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+.slider {
+    display: flex;
+    aspect-ratio: 16/9; /*common aspect ratio for photos to ensure good width to height */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* makes it snap to an image instead of stay slid only part of the way */
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25); /* box-shadow: (x-offset y-offset blur spread color) hsla = hugh saturation lightness alpha(or opacity value) */  
+    border-radius: 0.5rem;
+    overflow: hidden; /* hides the ugly slider bar */
+}
+.slider img {
+    flex: 1 0 100%; /* flex: flex-grow flex-shrink flex-basis */
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem; /* places slider nav 1.25 rem above bottom of slider */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /*puts nav in front of image */
+    
+}
+.slider-nav a {
+    width: 1rem;
+    height: 1rem; /* this width and height will create box shapes for these slider nav items */
+    border-radius: 50%; /* this makes them circles now */
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms; /* targets the opacity property */
     cursor: pointer;
 }
-#menu-toggle {
-    display: none; /* this hides the menu icon checkbox */
+.slider-nav a:hover {
+    opacity: 1;
 }
 
-
-
+/* Media Queries */
 @media screen and (max-width: 1160px) {
     html {
         font-size: 45%;
@@ -204,4 +263,13 @@ nav ul {
         align-items: center;
     }
 
+}
+
+@media screen and (max-width: 375px) {
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
