@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="style.css">
         
     </head>
-    <body>
+    <body class="eventspage">
         <header class="main_head">
             <nav>
                 <div id="logo">X-Events</div>
@@ -31,9 +31,18 @@
         <section class="slider-container">
             <div class="slider-wrapper">
                 <div class="slider">
-                    <img id="slide-1" src="images/minigolf.masters.jpg" alt="minigolf image" />
-                    <img id="slide-2" src="images/cool_dudes_band.jpg" alt="cool dudes singer photo" />
-                    <img id="slide-3" src="images/popcorn.jpg" alt="image of popcorn" />
+                    <div class="slide">
+                        <img id="slide-1" src="images/mini-golf-masters.jpg" alt="minigolf image" />
+                        <div class="overlay-text"><a href="#minigolf">Minigolf Masters <br /> Tournament</a></div>
+                    </div>
+                    <div class="slide">
+                        <img id="slide-2" src="images/cool_dudes_band.jpg" alt="cool dudes singer photo" />
+                        <div class="overlay-text"><a href="#cooldudes">Cool Dudes Band</a></div>
+                    </div>
+                    <div class="slide">
+                        <img id="slide-3" src="images/popcorn.jpg" alt="image of popcorn" />
+                        <div class="overlay-text"><a href="#movienight">Movie Night!</a></div>
+                    </div>
                 </div>
                 <div class="slider-nav">
                     <a href="#slide-1"></a>
@@ -41,7 +50,26 @@
                     <a href="#slide-3"></a>
                 </div>
             </div>
-            
+            <hr style="height:2px;border-width:0;color:rgba(3, 2, 2, 0.75);background-color:rgba(3, 2, 2, 0.50);margin-top: 10rem;">
+        </section>
+        <section class="events">
+            <article id="minigolf" class="eventarticle">
+                <h2>Mini-golf Masters Tournament</h2>
+                <h4>Sat June 5th</h4>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque feugiat litora sit hendrerit ut sagittis curae. Curabitur ipsum quam himenaeos congue amet sociosqu. Taciti sed faucibus penatibus vulputate lectus bibendum at tristique. </p>
+            </article>
+            <article id="cooldudes" class="eventarticle">
+                <h2>Cool Dudes Performing</h2>
+                <h4>Sat May 10th</h4>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque feugiat litora sit hendrerit ut sagittis curae. Curabitur ipsum quam himenaeos congue amet sociosqu. Taciti sed faucibus penatibus vulputate lectus bibendum at tristique. </p>
+
+            </article>
+            <article id="movienight" class="eventarticle">
+                <h2>Movie Night</h2>
+                <h4>Wed May 5th</h4>
+                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque feugiat litora sit hendrerit ut sagittis curae. Curabitur ipsum quam himenaeos congue amet sociosqu. Taciti sed faucibus penatibus vulputate lectus bibendum at tristique. </p>
+
+            </article>
         </section>
     </body>
 </html>

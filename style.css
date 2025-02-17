@@ -80,6 +80,7 @@ button {
     border-radius: 1rem;
     transition: all 0.5s ease-in-out;
 }
+
 button:hover {
     background: var(--buttonhover);
     font-size: 3.0rem;
@@ -177,32 +178,55 @@ nav ul {
 }
 
 /* Events Page */
+.eventspage {
+    background: rgb(122, 146, 212);
+}
 
 /* Events Page Slider */
 .slider-container {
     padding: 2rem;
-    background: green;
     min-height: 90vh;
 }
 .slider-wrapper {
     position: relative;
-    max-width: 60rem;
+    max-width: 100rem;
     margin: 0 auto;
 }
 .slider {
     display: flex;
+    flex-wrap: wrap;
     aspect-ratio: 16/9; /*common aspect ratio for photos to ensure good width to height */
     overflow-x: auto;
     scroll-snap-type: x mandatory; /* makes it snap to an image instead of stay slid only part of the way */
     scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25); /* box-shadow: (x-offset y-offset blur spread color) hsla = hugh saturation lightness alpha(or opacity value) */  
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.75); /* box-shadow: (x-offset y-offset blur spread color) hsla = hugh saturation lightness alpha(or opacity value) */  
     border-radius: 0.5rem;
     overflow: hidden; /* hides the ugly slider bar */
+    position: relative;
 }
-.slider img {
+.slide {
+    position: relative;
+    height: auto;
+    object-fit: contain;
+}
+.overlay-text {
+    position: absolute;
+    top: 30px; /* Adjust as needed */
+    left: 45px; /* Adjust as needed */
+    background-color: rgba(22, 63, 158, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2.5rem; /* Adjust as needed */
+}
+.overlay-text a {
+    color: rgb(226, 205, 51);
+    text-decoration: underline;
+}
+.slide img {
     flex: 1 0 100%; /* flex: flex-grow flex-shrink flex-basis */
     scroll-snap-align: start;
     object-fit: cover;
+    object-position: center;
     width: 100%;
     height: auto;
 }
@@ -214,7 +238,6 @@ nav ul {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; /*puts nav in front of image */
-    
 }
 .slider-nav a {
     width: 1rem;
@@ -228,9 +251,31 @@ nav ul {
 .slider-nav a:hover {
     opacity: 1;
 }
+.eventarticle {
+    margin: 5rem auto;;
+    width: 60%;
+    border: 2px solid black;
+    background-color: rgba(21, 25, 165, 0.50);
+    padding: 5rem;
+    border-radius: 1.5rem;
+    transition: all 0.5s ease-in-out;
+}
+.eventarticle:hover {
+    background-color:rgb(2, 18, 90);
+
+}
+.eventarticle h2, h4{
+    color: rgb(50, 171, 48);
+    text-decoration: underline;
+}
+.eventarticle p {
+    font-size: 4rem;
+    color: white;
+    font-weight: normal;
+}
 
 /* Media Queries */
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1377px) {
     html {
         font-size: 45%;
     }
