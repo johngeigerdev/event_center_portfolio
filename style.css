@@ -39,7 +39,7 @@ html {
 }
 body {
     font-family: "Poppins", sans-serif;
-    background-color: var(--background_1)
+    background-color: var(--background_1);
 }
 h1 {
     font-size: 4.5rem;
@@ -73,8 +73,9 @@ a {
     cursor: pointer;
 }
 button {
+    display: block;
     padding: 2rem 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
     background: var(--button);
     border: none;
     color: white;
@@ -103,7 +104,6 @@ nav {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 90%;
     margin: auto;
     padding: 2rem;
     flex-wrap: wrap; /* this makes it so nav items at right go below Travelly logo once screen shrinks to a certain point */
@@ -196,8 +196,15 @@ nav ul {
 /* Events Page */
 /* Events Page Slider */
 .slider-container {
-    padding: 2rem;
+    padding: 1rem 7rem 0;
     min-height: 90vh;
+}
+.slider-container hr {
+    height:2px;
+    border-width:0;
+    color:rgba(3, 2, 2, 0.75);
+    background-color:rgba(3, 2, 2, 0.50);
+    margin:5rem 5rem;
 }
 .slider-wrapper {
     position: relative;
@@ -265,7 +272,7 @@ nav ul {
 }
 .eventarticle {
     margin: 5rem auto;;
-    width: 60%;
+    width: 80%;
     border: 2px solid black;
     background-color: rgba(21, 25, 165, 0.50);
     padding: 5rem;
@@ -314,26 +321,26 @@ nav ul {
     font-family: var(--logofont);
     font-size: 8rem;
 }
-#menuentries {
+#menu-entries {
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
-#menuentries h2 {
+#menu-entries h2 {
     font-family: var(--logofont);
     text-decoration: underline;
 }
-#menuentries p {
+#menu-entries p {
     line-height: 2.5rem;
     font-size: 2rem;
     padding: 1rem;
 }
 
 /* map page  */
-#mapframe {
+#map-frame {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .address {
     align-self: flex-start;
@@ -345,11 +352,10 @@ nav ul {
 .address p {
     font-size: 2.5rem;
 }
-form button {
-    width: 20%;
-    margin: 2rem auto;
+iframe {
+    width: 700px;
+    height: 550px;
 }
-
 /* Contact Page */
 
 #contact-container {
@@ -400,7 +406,42 @@ input, select, textarea {
     #logo {
         padding: 2rem;
     }
+    .slider-container {
+        padding: 1rem 7rem 0;
+        min-height: 60vh;
+    }
 }
+@media screen and (max-width: 1150px) {
+    #map-box {
+        width: 90%;
+        display: block;
+        margin: 1rem auto;
+    }
+    #map-frame div{
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 950px) {
+    #map-frame {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* This will align the items in the center */
+        text-align: center; /* Ensure text is centered */
+        max-width: 80%;
+    }
+    .address {
+        align-self: center; /* Center the address element */
+    }
+    #map-box {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     nav ul {
@@ -422,14 +463,85 @@ input, select, textarea {
         flex-direction: column;
         align-items: center;
     }
+    .slider-container {
+        padding: 1rem 7rem 0;
+        min-height: 40vh;
+    }
+    .eventarticle {
+        padding: 1rem 0.5rem;
+    }
+    .eventarticle h2{
+        font-size: 4rem;
+    }
+    .eventarticle p {
+        font-size: 2rem;
+    }
+    #map-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+    }
+    /* nav {
+        width: 100%;
+    } */
+}
 
+@media screen and (max-width: 675px) {
+    #menu-entries {
+        display: flex;
+        flex-direction: column;
+    }
+    .slider-container {
+        padding: 1rem 7rem 0;
+        min-height: 40vh;
+    }
+    #map-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+    }
+    /* nav {
+        width: 100%;
+    } */
+}
+
+@media screen and (max-width: 500px) {
+    /* nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } */
+    .slider-container {
+        padding: 1rem 7rem 0;
+        min-height: 20vh;
+    }
+    .eventarticle {
+        padding: 1rem 0.5rem;
+        width: 80%;
+    }
+    .eventarticle h2{
+        font-size: 4rem;
+    }
+    .eventarticle p {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 375px) {
-
     nav {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+    .slider-container {
+        padding: 1rem;
+        min-height: 20vh;
+    }
+    .slider-container {
+        padding: 1rem 7rem 0;
+        min-height: 20vh;
+    }
+
 }
