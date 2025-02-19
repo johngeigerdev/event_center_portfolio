@@ -24,6 +24,9 @@
 :root {
     --button: rgb(24, 119, 201);
     --buttonhover: rgb(15, 8, 233);
+    --background_1: rgb(116, 145, 224);
+    --logofont: "pattaya", sans-serif;
+    --h2red: rgb(193, 53, 38);
 }
 
 * {
@@ -112,7 +115,7 @@ nav ul {
 }
 #logo {
     flex: 2 1 40rem;
-    font-family: "pattaya", sans-serif;
+    font-family: var(--logofont);
     font-weight: 400;
     font-size: 3.0rem;
 }
@@ -129,6 +132,15 @@ nav ul {
     justify-content: center; /* this centers the content vertically */
     align-items: center; /* this centers content horizontally */
     text-align: center; /* before this, text is aligned to left in its box, this makes it align center */
+}
+.hero h1 {
+    font-family: var(--logofont);
+    font-size: 15rem;
+    background: linear-gradient(rgb(240, 158, 6), rgb(0, 5, 11));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px black; /* this adds an outline to the h1 letters */
+    
 }
 .hero p {
     padding: 5rem; /* this creates vertical space between the h1, the p and the button */
@@ -274,6 +286,68 @@ nav ul {
     font-weight: normal;
 }
 
+/* Menu Page  */
+
+#menu_container {
+    background-color: var(--background_1);
+    padding: 1rem 2rem;
+    margin: auto;
+}
+#primary_menu {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 10px;
+}
+.menuheading {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    font-size: 2.5dvh;
+}
+.menuheading h1 {
+    text-decoration: underline;
+}
+.menuheading h1 {
+    color: black;
+    font-family: var(--logofont);
+    font-size: 8rem;
+}
+#menuentries {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+#menuentries h2 {
+    font-family: var(--logofont);
+    text-decoration: underline;
+}
+#menuentries p {
+    line-height: 2.5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+/* map page  */
+#mapframe {
+    background-color: var(--background_1);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.address {
+    align-self: flex-start;
+    padding: 15rem 0;
+}
+.address h2 {
+    text-decoration: underline;
+}
+.address p {
+    font-size: 2.5rem;
+}
 /* Media Queries */
 @media screen and (max-width: 1377px) {
     html {
